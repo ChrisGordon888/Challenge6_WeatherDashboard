@@ -18,7 +18,7 @@ function getWeatherData(city) {
   console.log("Getting weather data for", city);
 
   // Add code here to fetch weather data from an API based on the given city
-  const apiKey = '<YOUR_API_KEY_HERE>';
+  const apiKey = '839f738027fe26900077822aaf5bf60b';
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
 
   console.log("API URL:", apiUrl);
