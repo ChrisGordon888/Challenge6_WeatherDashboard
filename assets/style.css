@@ -1,112 +1,141 @@
-/* Set default font and background colors */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #F7F7F7;
-    color: #333;
-  }
-  
-  /* Set maximum width and center the content */
-  .container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* Style the title */
-  .title {
-    text-align: center;
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    background: linear-gradient(to right, #007bff, #005cbf);
-    color: #fff;
-  }
-  
-  .search-display-sections {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
+/* Reset default margin and padding */
+* {
+}
 
-  /* Style the search section */
-  .search-section {
-    float: left;
-    width: 50%;
-    padding-right: 20px;
-    display: inline-block;
-  }
-  
-  .search-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .search-bar {
-    display: flex;
-    margin-bottom: 10px;
-  }
-  
-  .search-bar input {
-    flex-grow: 1;
-    margin-right: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-  }
-  
-  .search-bar button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  .city-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .city-list li {
-    margin-bottom: 5px;
-    cursor: pointer;
-    padding: 10px;
-    border: 1px solid #ccc;
-  }
-  
-  .city-list li:hover {
-    background-color: #eee;
-  }
-  
-  /* Style the display section */
-  .display-sections {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-  
-  .display-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .city-info {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .forecast-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .forecast {
-    border: 1px solid #ccc;
-    padding: 10px;
-  }
+/* Set background color and font family */
+body {
+  background-color: #F0F0F0;
+  font-family: Arial, sans-serif;
+}
+
+/* Style the title bar */
+.title {
+  background: linear-gradient(to right, #5C5EDC, #3838A8);
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Style the container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the search section */
+.search-section {
+  float: left;
+  width: 30%;
+}
+
+/* Style the search bar */
+.search-bar {
+  margin-top: 10px;
+}
+
+/* Style the city list */
+.city-list {
+  list-style-type: none;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.city-list li {
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.city-list li:hover {
+  text-decoration: underline;
+}
+
+/* Style the display wrapper */
+.display-wrapper {
+  float: right;
+  width: 70%;
+}
+
+/* Style the display section */
+.display-section {
+  background-color: #F5F5F5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+/* Style the city info */
+.city-info {
+  margin-bottom: 20px;
+}
+
+.city-info h2 {
+  margin-bottom: 10px;
+}
+
+/* Style the forecast */
+.forecast {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.forecast-item {
+  width: calc(100% / 5 - 20px);
+  margin: 10px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.forecast-date {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.forecast-time {
+  margin: 0;
+  font-size: 14px;
+}
+
+.forecast-icon {
+  margin: 10px 0;
+}
+
+.forecast-temp,
+.forecast-humidity {
+  margin: 0;
+}
+
+/* Style the UV index */
+.uv-index {
+  font-weight: bold;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+.uv-index.low {
+  background-color: #7CFC00;
+  color: #000;
+}
+
+.uv-index.moderate {
+  background-color: #FFD700;
+  color: #000;
+}
+
+.uv-index.high,
+.uv-index.very-high,
+.uv-index.extreme {
+  background-color: #FF6347;
+  color: #fff;
+}
+
+.uv-index.very-high {
+  background-color: #FF4500;
+}
+
+.uv-index.extreme {
+  background-color: #8B0000;
+}

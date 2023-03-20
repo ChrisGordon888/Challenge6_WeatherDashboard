@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather Dashboard</title>
     <link rel="stylesheet" href="assets/style.css">
 </head>
 
@@ -19,28 +19,25 @@
               <button id="search-btn" type="submit">Search</button>
             </div>
             <ul id="city-list" class="city-list">
-              <li>New York</li>
-              <li>Los Angeles</li>
-              <li>Chicago</li>
-              <li>Houston</li>
-              <li>Philadelphia</li>
-              <li>Phoenix</li>
-              <li>San Antonio</li>
-              <li>San Diego</li>
             </ul>
           </div>
+          <div class="display-wrapper">
           <div class="display-section">
-            <h2 class="display-title">City Information</h2>
-            <div id="city-info" class="city-info">
-              <!-- City information will be displayed here -->
+            <div class="city-info-container">
+              <h2 class="display-title">City Information:</h2>
+              <div id="city-info" class="city-info">
+                <!-- City information will be displayed here -->
+              </div>
             </div>
-            <h2 class="forecast-title">5-Day Forecast:</h2>
-            <div id="forecast" class="forecast">
-              <!-- 5-day forecast will be displayed here -->
+            <div class="forecast-container">
+              <h2 class="forecast-title">5-Day Forecast:</h2>
+              <div id="forecast" class="forecast">
+                <!-- 5-day forecast will be displayed here -->
+              </div>
             </div>
           </div>
         </div>
-      </div>
+    </div>
     
     <script src="assets/script.js"></script>
 </body>
