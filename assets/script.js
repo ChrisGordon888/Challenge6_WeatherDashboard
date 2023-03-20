@@ -22,7 +22,7 @@ function saveSearchHistory() {
 function getWeatherData(city) {
     console.log("Getting weather data for", city);
   
-    // Add code here to fetch weather data from an API based on the given city
+    // Code to fetch weather data from an API based on the given city
     const apiKey = 'c2dd64bed0d192ca82b608eed6c92a15';
     const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
     const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`;
@@ -83,25 +83,23 @@ function displayForecast(forecastData) {
       const forecastDate = new Date(
         forecastData.list[i].dt * 1000
       ).toLocaleDateString();
-      const forecastTime = new Date(
-        forecastData.list[i].dt * 1000
-      ).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
       const forecastIcon = `https://openweathermap.org/img/w/${forecastData.list[i].weather[0].icon}.png`;
       const forecastTemp = `${forecastData.list[i].main.temp.toFixed()}°F`;
+      const forecastWind = `${forecastData.list[i].wind.speed.toFixed()} mph`;
       const forecastHumidity = `${forecastData.list[i].main.humidity}%`;
   
       // Create HTML for the forecast data for the current 3-hour period
       const forecastHtml = `
         <div class="forecast-item">
           <p class="forecast-date">${forecastDate}</p>
-          <p class="forecast-time">${forecastTime}</p>
           <img src="${forecastIcon}" alt="${forecastData.list[i].weather[0].description}" class="forecast-icon">
           <p class="forecast-temp">${forecastTemp}</p>
+          <p class="forecast-wind">${forecastWind}</p>
           <p class="forecast-humidity">${forecastHumidity}</p>
         </div>
       `;
   
-      // Add the HTML for the current 3-hour period to the forecast section
+      // HTML for the current 3-hour period to the forecast section
       forecast.innerHTML += forecastHtml;
     }
   }
@@ -137,6 +135,28 @@ searchBtn.addEventListener('click', function() {
         })
         .catch(error => {
             console.log("Error fetching weather data:", error);
+        });
+    }
+});
+
+// Step 1: Add an event listener to the city list items
+cityList.addEventListener('click', function(event) {
+    // Check if the clicked element is a list item
+    if (event.target.tagName === 'LI') {
+      // Retrieve the city name from the clicked list item
+      const cityName = event.target.textContent;
+  
+      // Call the getWeatherData function to retrieve the weather data for the selected city
+      getWeatherData(cityName)
+        .then(cityData => {
+          // Call the displayCurrentWeather function to display the current weather for the selected city
+          displayCurrentWeather(cityData);
+  
+          // Call the displayForecast function to display the forecast for the selected city
+          displayForecast(cityData.forecast);
+        })
+        .catch(error => {
+          console.log("Error fetching weather data:", error);
         });
     }
 });
