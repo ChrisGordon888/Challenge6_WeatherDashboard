@@ -4,11 +4,11 @@ A weather dashboard that will run in the browser and feature dynamically updated
 
 User Story:
 
-- AS A traveler
+AS A traveler
 
-- I WANT to see the weather outlook for multiple cities
+I WANT to see the weather outlook for multiple cities
 
-- SO THAT I can plan a trip accordingly
+SO THAT I can plan a trip accordingly
 
 
 Acceptance Criteria:
